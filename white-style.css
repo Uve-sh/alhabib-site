@@ -1,0 +1,822 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg-pure: #ffffff;
+  --bg-cream: #faf8f5;
+  --bg-cream-dark: #f3efe8;
+  --bg-card: #ffffff;
+  
+  --text-main: #1a1918;
+  --text-secondary: #57534e;
+  --text-muted: #8c857b;
+  
+  --gold-accent: #b68d40;
+  --gold-hover: #96722d;
+  --gold-light: #f4eee2;
+  --gold-border: #e6dac6;
+  
+  --border-light: #eee9e0;
+  --border-dark: #292524;
+  
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
+  --shadow-hover: 0 12px 30px rgba(0, 0, 0, 0.08);
+  
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Montserrat', -apple-system, sans-serif;
+  
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-pure);
+  color: var(--text-main);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Top Announcement Strip */
+.top-strip {
+  background: var(--bg-cream-dark);
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 9px 0;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.top-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-strip a {
+  color: var(--gold-accent);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.top-strip a:hover {
+  color: var(--gold-hover);
+}
+
+/* Main Luxury Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 88px;
+}
+
+.brand-block {
+  text-align: center;
+}
+
+.brand-logo-text {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: block;
+  line-height: 1;
+}
+
+.brand-sub-text {
+  font-size: 0.65rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-top: 4px;
+  display: block;
+}
+
+.main-menu {
+  display: flex;
+  list-style: none;
+  gap: 36px;
+}
+
+.menu-link {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  position: relative;
+  padding: 6px 0;
+}
+
+.menu-link:hover, .menu-link.active {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.menu-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold-accent);
+}
+
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-icon-link {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.nav-icon-link:hover {
+  color: var(--gold-accent);
+}
+
+.bag-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: var(--gold-accent);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 600;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Luxury Editorial Hero (White) */
+.hero-editorial {
+  padding: 80px 0 90px;
+  background: radial-gradient(circle at 80% 20%, #f7f3eb 0%, #ffffff 60%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-pretitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 16px;
+  display: block;
+  font-weight: 600;
+}
+
+.hero-heading {
+  font-size: 3.8rem;
+  line-height: 1.1;
+  font-weight: 400;
+  margin-bottom: 24px;
+  color: var(--text-main);
+}
+
+.hero-heading em {
+  font-style: italic;
+  font-family: var(--font-serif);
+}
+
+.hero-paragraph {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero-img-wrap {
+  position: relative;
+  text-align: center;
+}
+
+.hero-img-card {
+  background: #ffffff;
+  padding: 16px;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-hover);
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.hero-img-card img {
+  width: 100%;
+  max-width: 440px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.hero-seal {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background: var(--bg-cream-dark);
+  border: 1px solid var(--gold-border);
+  padding: 14px 20px;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--gold-accent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--text-main);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background: var(--gold-accent);
+  color: #ffffff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border-color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background: var(--text-main);
+  color: #ffffff;
+}
+
+.btn-whatsapp {
+  background: #15803d;
+  color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+  background: #166534;
+}
+
+/* Trust Pillar Banner (White/Cream) */
+.pillars-strip {
+  background: var(--bg-cream);
+  border-bottom: 1px solid var(--border-light);
+  padding: 36px 0;
+}
+
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+.pillar-item {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.pillar-icon {
+  font-size: 1.4rem;
+  color: var(--gold-accent);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pillar-title {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.pillar-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Section Header */
+.section {
+  padding: 90px 0;
+}
+
+.section-cream {
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-head {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 60px;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  color: var(--text-main);
+}
+
+.section-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Category Filter Bar */
+.category-filter-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filter-tab {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-sans);
+}
+
+.filter-tab:hover, .filter-tab.active {
+  background: var(--text-main);
+  color: #fff;
+  border-color: var(--text-main);
+}
+
+/* Luxury Product Grid & Cards (Clean White) */
+.perfume-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 36px;
+}
+
+.perfume-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.perfume-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: var(--gold-border);
+  transform: translateY(-4px);
+}
+
+.perfume-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--bg-cream-dark);
+  color: var(--text-main);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 1px solid var(--border-light);
+  font-weight: 600;
+  z-index: 5;
+}
+
+.perfume-img-box {
+  background: #faf8f5;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.perfume-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.perfume-card:hover .perfume-img {
+  transform: scale(1.05);
+}
+
+.perfume-body {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.perfume-family {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.perfume-name {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+  color: var(--text-main);
+}
+
+.perfume-name a:hover {
+  color: var(--gold-accent);
+}
+
+.perfume-excerpt {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+/* Olfactory Pyramid Preview */
+.notes-preview {
+  background: var(--bg-cream);
+  border: 1px solid var(--border-light);
+  padding: 12px 14px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.notes-preview strong {
+  color: var(--text-main);
+}
+
+/* Size Selector Pills */
+.volume-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.volume-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.volume-options {
+  display: flex;
+  gap: 6px;
+}
+
+.volume-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.72rem;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: var(--transition);
+  font-family: var(--font-sans);
+}
+
+.volume-btn.active, .volume-btn:hover {
+  background: var(--text-main);
+  color: #fff;
+  border-color: var(--text-main);
+}
+
+/* Pricing & Action */
+.perfume-action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.perfume-price {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.perfume-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-card-add {
+  background: var(--text-main);
+  color: #ffffff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.btn-card-add:hover {
+  background: var(--gold-accent);
+}
+
+.btn-card-wa {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-card-wa:hover {
+  background: #16a34a;
+  color: #fff;
+}
+
+/* Bharuch Heritage Feature (White/Ivory) */
+.heritage-feature {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.heritage-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.heritage-card-frame {
+  border: 1px solid var(--gold-border);
+  padding: 16px;
+  background: var(--bg-cream);
+}
+
+.heritage-card-frame img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  display: block;
+}
+
+.heritage-details h2 {
+  font-size: 3rem;
+  margin-bottom: 24px;
+}
+
+.heritage-details p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Reviews Grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  padding: 36px 30px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.review-stars {
+  color: var(--gold-accent);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.review-quote {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.review-author {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Luxury White Footer */
+.site-footer {
+  background: #fbf9f5;
+  border-top: 1px solid var(--border-light);
+  padding: 80px 0 30px;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.footer-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.footer-col h4 {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: var(--gold-accent);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.footer-contact-item i {
+  color: var(--gold-accent);
+  margin-top: 3px;
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .heritage-grid { grid-template-columns: 1fr; }
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .footer-columns { grid-template-columns: 1fr 1fr; }
+  .main-menu { display: none; }
+}
+
+@media (max-width: 600px) {
+  .hero-heading { font-size: 2.6rem; }
+  .pillars-grid { grid-template-columns: 1fr; }
+  .footer-columns { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+}

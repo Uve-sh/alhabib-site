@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attar Details | Al-Habib Haute Parfumerie</title>
+  <link rel="icon" href="https://alhabib.co.in/image/catalog/1000149172.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="white-style.css">
+</head>
+<body>
+
+  <!-- Top Strip -->
+  <div class="top-strip">
+    <div class="container top-strip-inner">
+      <div><span>Maison De Parfum • Handcrafted in Bharuch, Gujarat</span></div>
+      <div><span>Complimentary Express Shipping Across India on Orders Above ₹999</span></div>
+      <div><span>Concierge: <a href="tel:7888929993">+91 78889 29993</a></span></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <ul class="main-menu">
+        <li><a href="index.html" class="menu-link">Home</a></li>
+        <li><a href="shop.html" class="menu-link active">All Attars (इत्र)</a></li>
+        <li><a href="about.html" class="menu-link">Our Heritage</a></li>
+        <li><a href="contact.html" class="menu-link">Atelier & Contact</a></li>
+      </ul>
+
+      <div class="brand-block">
+        <a href="index.html">
+          <span class="brand-logo-text">Al-Habib</span>
+          <span class="brand-sub-text">Haute Parfumerie • Est. Bharuch</span>
+        </a>
+      </div>
+
+      <div class="nav-tools">
+        <a href="cart.html" class="nav-icon-link" title="Shopping Bag">
+          <i class="fa fa-shopping-bag"></i>
+          <span class="bag-badge">0</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Product Detail Container -->
+  <main class="section" id="productMain">
+    <div class="container">
+      <div id="productDetailContent" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;">
+        <!-- Injected dynamically by inline script matching ATTARS dataset -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div>
+          <span class="footer-logo">Al-Habib</span>
+          <p class="footer-desc">Artisanal purveyors of pure non-alcoholic attars and hydro-distilled Indian oils.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">Shop All</a></li>
+            <li><a href="about.html">Heritage</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Client Concierge</h4>
+          <ul class="footer-links">
+            <li><a href="cart.html">Shopping Bag</a></li>
+            <li><a href="https://wa.me/917888929993" target="_blank">Order via WhatsApp</a></li>
+            <li><a href="tel:7888929993">Call: +91 78889 29993</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Boutique Address</h4>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+            DAR-E ARQUM HUSENIYA, Bharuch, Gujarat 392001, India<br>
+            Email: business@alhabib.co.in
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Al-Habib Haute Parfumerie. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="store.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get('id') || 'oud-al-habib';
+      const p = ATTARS.find(item => item.id === productId) || ATTARS[0];
+      
+      document.title = `${p.name} | Al-Habib Haute Parfumerie`;
+      
+      let activeSize = '6ml';
+      let activePrice = p.sizes[activeSize];
+
+      const container = document.getElementById('productDetailContent');
+      function renderDetail() {
+        container.innerHTML = `
+          <div>
+            <div style="background: #ffffff; border: 1px solid var(--border-light); padding: 24px; text-align: center; box-shadow: var(--shadow-subtle);">
+              <img src="${p.image}" alt="${p.name}" style="width: 100%; max-width: 440px; height: auto; display: block; margin: 0 auto;" />
+            </div>
+            <div style="display: flex; gap: 12px; margin-top: 14px; justify-content: center;">
+              <span class="badge-pill" style="background: var(--bg-cream-dark); border: 1px solid var(--border-light); font-size: 0.75rem; padding: 6px 14px;">100% Non-Alcoholic</span>
+              <span class="badge-pill" style="background: var(--bg-cream-dark); border: 1px solid var(--border-light); font-size: 0.75rem; padding: 6px 14px;">Pure Concentrated Oil</span>
+              <span class="badge-pill" style="background: var(--bg-cream-dark); border: 1px solid var(--border-light); font-size: 0.75rem; padding: 6px 14px;">Bharuch Distilled</span>
+            </div>
+          </div>
+
+          <div>
+            <span class="section-eyebrow" style="margin-bottom: 8px;">${p.category} • Maison Blend</span>
+            <h1 style="font-size: 2.8rem; margin-bottom: 8px; line-height: 1.15;">${p.name}</h1>
+            <p style="font-size: 1.05rem; font-style: italic; color: var(--gold-accent); margin-bottom: 20px;">${p.tagline}</p>
+            
+            <div style="font-size: 2.2rem; font-family: var(--font-serif); font-weight: 600; color: var(--text-main); margin-bottom: 24px;">
+              ₹${activePrice.toLocaleString()} <span style="font-size: 0.85rem; color: var(--text-muted); font-family: var(--font-sans); font-weight: 400;">(Inclusive of all taxes)</span>
+            </div>
+
+            <p style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 30px;">
+              ${p.description}
+            </p>
+
+            <div style="margin-bottom: 28px;">
+              <div style="font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; font-weight: 600;">
+                Select Flacon Volume:
+              </div>
+              <div style="display: flex; gap: 10px;">
+                ${Object.keys(p.sizes).map(s => `
+                  <button class="btn btn-outline ${s === activeSize ? 'btn-primary' : ''}" style="padding: 10px 24px;" onclick="changeSize('${s}')">
+                    ${s} (₹${p.sizes[s].toLocaleString()})
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 14px; margin-bottom: 36px; flex-wrap: wrap;">
+              <button class="btn btn-primary btn-lg" style="flex-grow: 1;" onclick="addToBag('${p.id}')">
+                <i class="fa fa-shopping-bag"></i> Add to Shopping Bag
+              </button>
+              <button class="btn btn-whatsapp btn-lg" onclick="orderWhatsApp('${p.id}')">
+                <i class="fa fa-whatsapp"></i> Order on WhatsApp
+              </button>
+            </div>
+
+            <!-- Olfactory Pyramid -->
+            <div style="background: var(--bg-cream); border: 1px solid var(--border-light); padding: 24px; margin-bottom: 30px;">
+              <h3 style="font-size: 1.2rem; margin-bottom: 14px;">Olfactory Architecture</h3>
+              <div style="font-size: 0.88rem; line-height: 1.8;">
+                <div style="margin-bottom: 6px;"><strong>Top Notes:</strong> <span style="color: var(--text-secondary);">${p.notes.top}</span></div>
+                <div style="margin-bottom: 6px;"><strong>Heart Notes:</strong> <span style="color: var(--text-secondary);">${p.notes.heart}</span></div>
+                <div><strong>Base Notes:</strong> <span style="color: var(--text-secondary);">${p.notes.base}</span></div>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; font-size: 0.82rem; color: var(--text-secondary);">
+              <div><i class="fa fa-clock-o" style="color: var(--gold-accent);"></i> Longevity: <strong>${p.longevity}</strong></div>
+              <div><i class="fa fa-bullhorn" style="color: var(--gold-accent);"></i> Sillage: <strong>${p.sillage}</strong></div>
+            </div>
+
+          </div>
+        `;
+      }
+
+      window.changeSize = function(size) {
+        activeSize = size;
+        activePrice = p.sizes[size];
+        currentSizes[p.id] = size;
+        renderDetail();
+      };
+
+      renderDetail();
+    });
+  </script>
+</body>
+</html>
