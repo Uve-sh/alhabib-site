@@ -7,7 +7,7 @@ const ATTARS = [
     tagline: 'Signature Royal Blend',
     category: 'oud',
     description: 'Our crown jewel. Distilled from 25-year aged wild Cambodian and Hindi agarwood, infused with Taif rose, Kashmiri saffron, and aged warm ambergris.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_Oud_Al_Habib_6ml_Website_700x700-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=800&q=80',
     basePrice: 1500,
     sizes: { '3ml': 850, '6ml': 1500, '12ml': 2800 },
     notes: {
@@ -25,7 +25,7 @@ const ATTARS = [
     tagline: 'Exotic Passionfruit & Smokey Woods',
     category: 'oud',
     description: 'An electrifying modern creation marrying tangy tropical passionfruit with smoldering leather and deep Indonesian agarwood oil.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_Oud_Maracuja_6ml_Website_700x700-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80',
     basePrice: 900,
     sizes: { '3ml': 500, '6ml': 900, '12ml': 1650 },
     notes: {
@@ -43,7 +43,7 @@ const ATTARS = [
     tagline: 'Hydro-Distilled Indian Damask Rose',
     category: 'floral',
     description: 'Handpicked early morning desi gulab petals distilled in heritage copper degs. Crisp, dewy, romantic, and completely free from synthetic oils.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_Rose_Gulab_6ml_Website_700x700-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1588405748880-12d1d2a59f75?auto=format&fit=crop&w=800&q=80',
     basePrice: 900,
     sizes: { '3ml': 500, '6ml': 900, '12ml': 1650 },
     notes: {
@@ -61,7 +61,7 @@ const ATTARS = [
     tagline: 'Silk Musk & Blonde Woods',
     category: 'oud',
     description: 'A whisper of purity. White Oud combines crystalline silk musk with velvety blonde agarwood, light cardamom, and soft jasmine blossoms.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_White_Oud_6ml_Website_700x700-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80',
     basePrice: 700,
     sizes: { '3ml': 400, '6ml': 700, '12ml': 1300 },
     notes: {
@@ -79,7 +79,7 @@ const ATTARS = [
     tagline: 'Prestige Amber & Royal Sandal',
     category: 'royal',
     description: 'Named after the celestial fountain, Kausar is an opulent, meditative symphony of rare ambergris, saffron, and aged Mysore sandalwood.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_Kausar_6ml_Website_700x700_Optimized-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?auto=format&fit=crop&w=800&q=80',
     basePrice: 1900,
     sizes: { '3ml': 1050, '6ml': 1900, '12ml': 3500 },
     notes: {
@@ -97,7 +97,7 @@ const ATTARS = [
     tagline: 'Authentic Petrichor (First Monsoon Rain)',
     category: 'earthy',
     description: 'The sacred scent of the first rainfall hitting parched, sun-baked clay soil. Hydro-distilled onto pure sandalwood oil base using traditional Kannauj pots.',
-    image: 'https://alhabib.co.in/image/cache/catalog/Al_Habib_Mitti_Punjab_Di_6ml_Website_700x700-420x420.jpg',
+    image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80',
     basePrice: 1500,
     sizes: { '3ml': 800, '6ml': 1500, '12ml': 2800 },
     notes: {
