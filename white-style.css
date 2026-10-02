@@ -92,14 +92,15 @@ a {
   color: var(--gold-hover);
 }
 
-/* Main Luxury Navigation */
+/* Main Luxury Navigation (Obsidian Black Header) */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-light);
+  background: #050608;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(182, 141, 64, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: var(--transition);
 }
 
@@ -107,7 +108,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 88px;
+  height: 106px;
 }
 
 .brand-block {
@@ -126,16 +127,21 @@ a {
 
 .brand-logo-link:hover {
   transform: translateY(-2px);
-  filter: drop-shadow(0 4px 14px rgba(182, 141, 64, 0.45));
 }
 
 .brand-logo-img {
-  height: 54px;
+  height: 88px;
   width: auto;
-  max-width: 270px;
+  max-width: 380px;
   display: block;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.06));
+  filter: drop-shadow(0 3px 14px rgba(223, 186, 104, 0.5)) contrast(1.1) brightness(1.06);
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.brand-logo-link:hover .brand-logo-img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 5px 22px rgba(223, 186, 104, 0.75)) contrast(1.15) brightness(1.1);
 }
 
 .footer-logo-img {
@@ -165,14 +171,18 @@ a {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.75);
   transition: var(--transition);
   position: relative;
   padding: 6px 0;
 }
 
-.menu-link:hover, .menu-link.active {
-  color: var(--text-main);
+.menu-link:hover {
+  color: #dfba68;
+}
+
+.menu-link.active {
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -182,7 +192,7 @@ a {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background: var(--gold-accent);
 }
 
@@ -193,8 +203,8 @@ a {
 }
 
 .nav-icon-link {
-  font-size: 1.15rem;
-  color: var(--text-secondary);
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.85);
   transition: var(--transition);
   position: relative;
   display: flex;
@@ -202,7 +212,7 @@ a {
 }
 
 .nav-icon-link:hover {
-  color: var(--gold-accent);
+  color: #dfba68;
 }
 
 .bag-badge {
@@ -210,11 +220,11 @@ a {
   top: -8px;
   right: -10px;
   background: var(--gold-accent);
-  color: #fff;
-  font-size: 0.62rem;
-  font-weight: 600;
-  width: 17px;
-  height: 17px;
+  color: #050608;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -836,10 +846,11 @@ a {
 
 @media (max-width: 768px) {
   .site-header {
-    background: rgba(255, 255, 255, 0.98);
+    background: #050608;
+    border-bottom: 1px solid rgba(182, 141, 64, 0.4);
   }
   .nav-container {
-    height: 84px;
+    height: 94px;
     padding: 0 10px 0 8px;
     gap: 0;
     display: flex;
@@ -860,13 +871,13 @@ a {
     width: 100%;
   }
   .brand-logo-img {
-    height: 76px;
-    max-height: 80px;
+    height: 84px;
+    max-height: 88px;
     width: 100%;
     max-width: 100%;
     object-fit: contain;
     object-position: left center;
-    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.08));
+    filter: drop-shadow(0 3px 14px rgba(223, 186, 104, 0.5)) contrast(1.1) brightness(1.06);
   }
   .nav-tools {
     flex-shrink: 0;
@@ -889,15 +900,15 @@ a {
 
 @media (max-width: 480px) {
   .nav-container {
-    height: 82px;
+    height: 88px;
     padding: 0 6px 0 6px;
   }
   .brand-block {
     padding-right: 2px;
   }
   .brand-logo-img {
-    height: 76px;
-    max-height: 80px;
+    height: 80px;
+    max-height: 84px;
     width: 100%;
     max-width: 100%;
     object-fit: contain;
